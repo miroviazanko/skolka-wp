@@ -1,0 +1,44 @@
+{
+  "menuList" : [
+    { "name": "O nás",
+      "classMenu": "leaf1",
+      "to": "oNas",
+      "component": "ONas"
+    },
+    { "name": "Šk. jedáleň",
+      "classMenu":"leaf2",
+      "to": "skJedalen",
+      "component": "SkJedalen"
+    },
+    { "name": "Aktuality",
+      "classMenu":"leaf3",
+      "to": "aktuality",
+      "component": "Aktuality"
+    },
+    { "name": "Fotogaléria",
+      "classMenu":"leaf4",
+      "to": "fotogaleria",
+      "component": "Fotogaleria"
+    },
+    { "name": "Kontakt",
+      "classMenu":"leaf5",
+      "to": "kontakt",
+      "component": "Kontakt"
+    },
+    { "name": "Tlačivá",
+      "classMenu":"leaf6",
+      "to": "tlaciva",
+      "component": "Tlaciva"
+    },
+    { "name": "Režim dňa",
+      "classMenu":"leaf7",
+      "to": "rezim",
+      "component": "Rezim"
+    },
+    { "name": "Domov",
+      "classMenu":"branch",
+      "to": "",
+      "component": "WelcomeScreen"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+.rezimContainer {
+    text-align: center;
+    margin: 5em auto;
+}
+
+.rezimImg {
+    width: 70em;
+}
+
+
+
+@media (max-width: 850px) {
+    .rezimContainer {
+            margin: 3em auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .rezimContainer {
+            margin: 2em auto;
+    }
+    .rezimImg {
+        margin-bottom: 2em;
+    }
+}

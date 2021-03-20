@@ -1,0 +1,60 @@
+.kontaktContainer {
+    text-align: center;
+    margin: 5em auto;
+    h5 {
+        font: {
+            family: 'Rubik', sans-serif;
+        }
+        color: grey;
+    }
+}
+
+.kontaktText {
+    margin-bottom: 7em;
+}
+
+.veduca {
+    margin: 0;
+    margin-top: 3em;
+    color: grey;
+    font: {
+        weight: bold;
+        size: 1.2em;
+    }
+}
+
+.map {
+    box-shadow: 0px 0px 8px -1px #046bb0;
+ }
+
+
+
+
+ @media (max-width: 850px) {
+     .kontaktContainer {
+         margin: 3em auto;
+     }
+     .map {
+         width: 90%;
+     }
+     .kontaktText {
+         margin-bottom: 4em;
+     }
+ }
+
+
+ @media (max-width: 500px) {
+     .kontaktContainer {
+         margin: 2em auto;
+     }
+     .veduca {
+         font: {
+            size: 1em;
+        }
+     }
+     .riaditelka, .obec {
+         font: {
+             weight: normal;
+         }
+     }
+ }

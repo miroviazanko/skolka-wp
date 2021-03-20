@@ -1,0 +1,34 @@
+{
+   "jedalnyListok": [
+        {
+                "den": "Po",
+                "desiata": "chlieb",
+                "obed": "maso",
+                "olovrant":"ryza"
+        },
+        {
+                "den": "Ut",
+                "desiata": "rozokdfgdfg  gd dfggdfgdfgdadfg dafg afdg",
+                "obed": "zemiak",
+                "olovrant":"keks"
+        },
+        {
+                "den": "St",
+                "desiata": "jablko",
+                "obed": "huby",
+                "olovrant":"omacka"
+        },
+        {
+                "den": "Stv",
+                "desiata": "ryba",
+                "obed": "med",
+                "olovrant":"mlieko"
+        },
+        {
+                "den": "Pi",
+                "desiata": "voda",
+                "obed": "jahoda",
+                "olovrant":"malina"
+        }
+    ]
+}

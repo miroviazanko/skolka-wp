@@ -1,0 +1,157 @@
+.welcomeContactContainer {
+    margin-top: 7em;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.gpsContainer, .timeContainer, .mailContainer, .phoneContainer, .taxContainer {
+    width: 25%;
+    display: inline-block;
+}
+
+
+.addressHeader, .openHeader, .mailHeader, .callHeader, .taxHeader,.taxHeader, .taxIcon  {
+    margin: 0;
+}
+
+.addressHeader {
+    color: #b73d2e;
+}
+.openHeader {
+    color: #ea7b22;
+}
+.mailHeader {
+    color: #046bb0;
+}
+.callHeader {
+    color:#6da61b;
+}
+.taxHeader {
+    color: #bbb800;
+}
+
+.address, .open, .mail, .call, .iban, .ibanIB {
+    font: {
+        family: 'Kalam';
+        size: .8em;
+    }
+}
+
+.taxContainer {
+    margin-top: 4em;
+}
+
+.taxIcon {
+    font: {
+        size: 4em;
+    }
+    color: #bbb800;
+}
+.euro {
+    vertical-align: -8px;
+}
+
+a {
+    text-decoration: none;
+    color: #9a9a9a;
+}
+.iban {
+    margin: 0;
+}
+.ibanIB {
+        margin-top: 1em;
+        margin-bottom: 0;
+    }
+
+
+
+@media (max-width: 1200px) {
+    .welcomeContactContainer {
+        margin-top: 7em;
+        width: 96%;
+        margin-left: 2%;
+    }
+    .gpsContainer, .timeContainer, .mailContainer, .phoneContainer, .taxContainer {
+        width: 33%;
+    }
+    .icon, .euro {
+        width: 55px;
+    }
+    .taxIcon {
+        font-size: 3.7em;
+    }
+    .euro {
+        vertical-align: -10px;
+    }
+}
+
+
+
+
+
+@media (max-width: 850px) {
+    .welcomeContactContainer {
+        margin-top: 5em;
+        width: 96%;
+        margin-left: 2%;
+    }
+
+    .gpsContainer, .timeContainer, .mailContainer, .phoneContainer, .taxContainer {
+        width: 48%;
+        display: inline-block;
+    }
+
+    .icon, .euro {
+        width: 40px;
+    }
+    .addressHeader, .openHeader, .mailHeader, .callHeader, .taxHeader,.taxHeader {
+       font-size: .8em;
+    }
+    .taxIcon {
+        font-size: 2.7em;
+    }
+    .euro {
+        vertical-align: -18px;
+    }
+    .taxContainer {
+        margin-top: 1em;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+    .welcomeContactContainer {
+        margin-top: 3em;
+        width: 98%;
+        margin-left: 1%;
+    }
+    .icon, .euro {
+        width: 30px;
+    }
+    .addressHeader, .openHeader, .mailHeader, .callHeader, .taxHeader,.taxHeader {
+       font-size: .6em;
+    }
+    .taxIcon {
+        font-size: 2em;
+    }
+    .euro {
+        vertical-align: -21px;
+    }
+    .taxContainer {
+        margin-top: 1em;
+    }
+    .address, .open, .mail, .call, .iban, .ibanIB {
+        font: {
+            size: .6em;
+        }
+    }
+}
+
+
+@media (max-width: 350px) {
+    .gpsContainer, .timeContainer, .mailContainer, .phoneContainer, .taxContainer {
+        width: 100%;
+        display: inline-block;
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "photos": [
+        {
+           "classWrapper": "picWrapper1",
+           "alt": "skolka fotka1",
+           "classImage": "fotka1"
+        },
+        {
+           "classWrapper": "picWrapper2",
+           "alt": "skolka fotka2",
+           "classImage": "fotka2"
+        },
+        {
+           "classWrapper": "picWrapper3",
+           "alt": "skolka fotka3",
+           "classImage": "fotka3"
+        }
+    ]
+}

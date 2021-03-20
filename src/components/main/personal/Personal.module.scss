@@ -1,0 +1,47 @@
+
+$text-background: #a25bb8;
+$sew-border-color: #ffffed;
+
+
+.personalContainer {
+    height: 76vw;
+    background: linear-gradient(180deg, rgba(149,199,64,1) 35%, rgba(149,199,38,1) 100%);
+    overflow: hidden;
+}
+
+
+.header {
+    margin: .5em .5em;
+}
+
+.sew {
+    width: 70vw;
+    height: 50vw;
+    margin-top: 8em;
+    position: relative;
+    background: $text-background;
+    border-radius: 3vw 3vw 3vw 3vw;
+    margin-left: 15%;
+}
+
+.textContainer {
+    width: 66vw;
+    height: 46vw;
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    border-radius: .3em;
+    background: $text-background;
+    text-align: left;
+
+    background-image: linear-gradient(to right,  #ffffed 50%, transparent 50%), linear-gradient(to right,  #ffffed 50%, transparent 50%), linear-gradient(to bottom,  #ffffed 50%, transparent 50%), linear-gradient(to bottom,  #ffffed 50%, transparent 50%);
+    background-position: left top, left bottom, left top, right top;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 41px 3px, 41px 3px, 3px 43px, 3px 43px;
+}
+
+.text  {
+    width: 65%;
+    padding: 1em;
+    color: #ffffed;
+}

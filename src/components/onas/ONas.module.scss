@@ -1,0 +1,98 @@
+$text-color: #9a9a9a;
+
+
+
+.oskolkeContainer {
+    text-align: center;
+    margin: 5em auto;
+    p {
+        width: 50em;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: justify;
+    }
+}
+
+.oskolkePhotoContainer {
+    display: inline-block;
+    margin: 0 1.5em;
+    overflow: hidden;
+    position: relative;
+}
+
+.oskolkePhotos {
+    margin-bottom: 3em;
+}
+
+.oskolkePhoto {
+    transition: all .3s ease;
+    border-radius: 3px;
+}
+
+.zoom {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+}
+
+.ourPhilosophy {
+    width: 46em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flowerIcon {
+    vertical-align: middle;
+    margin-right: 2em;
+}
+
+
+
+@media (max-width: 1000px) {
+    .oskolkeContainer {
+       p {
+           width: 90%;
+       }
+    }
+    .ecologyPhoto {
+        width: 90%;
+    }
+}
+
+
+@media (max-width: 850px) {
+    .oskolkeContainer {
+        margin: 3em auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .oskolkeContainer {
+        margin: 2em auto;
+    }
+    .oskolkePhotoContainer {
+        margin: 0 1em;
+    }
+    .ourPhilosophy {
+        width: 100%;
+        font: {
+            size: .85em
+        };
+    }
+    .flowerIcon {
+        width: 20px;
+    }
+}
+
+@media (max-width: 370px) {
+    .ourPhilosophy {
+        padding-left: .5em;
+        width: 100%;
+        font: {
+            size: .75em
+        };
+    }
+    .flowerIcon {
+        margin-right: .5em;
+    }
+}

@@ -1,0 +1,80 @@
+.tlacivaContainer {
+    text-align: center;
+    margin: 5em auto;
+    p {
+        display: inline-block;
+        margin-left: 2em;
+        font: {
+            size: 2em;
+        }
+    }
+    a {
+        display: block;
+        color: #235808;
+    }
+}
+
+.tlacivaSpecific {
+    margin-bottom: 7em;
+}
+
+
+
+
+@media (max-width: 850px) {
+    .tlacivaContainer {
+        margin: 3em auto;
+    }
+    .tlacivaSpecific {
+        p {
+            margin-left: 1em;
+            font: {
+                size: 1.4em;
+            }
+        }
+        .leaf {
+            width: 20px;
+            vertical-align: -6px;
+        }
+    }
+}
+
+
+
+@media (max-width: 500px) {
+    .tlacivaContainer {
+        margin: 2em auto;
+    }
+    .tlacivaSpecific {
+        p {
+            margin-left: .5em;
+            font: {
+                size: 1em;
+            }
+        }
+        .leaf {
+            width: 14px;
+            vertical-align: -8px;
+        }
+    }
+}
+
+
+@media (max-width: 330px) {
+    .tlacivaSpecific {
+        p {
+            font: {
+                size: .8em;
+            }
+        }
+        a {
+            font: {
+                size: .75em;
+            }
+        }
+        .leaf {
+            width: 14px;
+            vertical-align: -8px;
+        }
+    }
+}

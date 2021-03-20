@@ -1,0 +1,97 @@
+$text-background: #458ccc;
+$sew-border-color: #ffffed;
+
+
+.oSkolkeContainer {
+    height: 50vw;
+    background: linear-gradient(180deg, rgba(154,212,240,1) 35%, rgba(194,225,240,1) 100%);
+}
+
+.smallContainer {
+    position: relative;
+    width: 100%;
+    height: inherit;
+}
+
+.header {
+    margin: 2.5em .5em;
+}
+
+.sew {
+    width: 70vw;
+    height: 20vw;
+    position: absolute;
+    top: 20%;
+    z-index: 2;
+    background: $text-background;
+    border-radius: .3em .3em 0 0;
+    margin-left: 5%;
+}
+
+.textContainer {
+    display: flex;
+    width: 68vw;
+    height: 18vw;
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    border-radius: .3em;
+    background: $text-background;
+    text-align: left;
+
+    background-image: linear-gradient(to right,  #ffffed 50%, transparent 50%), linear-gradient(to right,  #ffffed 50%, transparent 50%), linear-gradient(to bottom,  #ffffed 50%, transparent 50%), linear-gradient(to bottom,  #ffffed 50%, transparent 50%);
+    background-position: left top, left bottom, left top, right top;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 41px 3px, 41px 3px, 3px 43px, 3px 43px;
+}
+
+.text  {
+    width: 65%;
+    padding: 1em;
+    color: #ffffed;
+}
+
+.picturesContainer {
+    display: flex;
+    width: 70vw;
+    position: absolute;
+    top: 30vw;
+    left: 5%;
+    z-index: 1;
+}
+
+.picWrapper1, .picWrapper2, .picWrapper3 {
+    overflow: hidden;
+    border-radius: 0 0 .3em .3em;
+    cursor: pointer;
+    .fotka1, .fotka2, .fotka3 {
+        width: 500px;
+        transition: all .5s ease;
+    }
+}
+
+
+.fotka1:hover, .fotka2:hover, .fotka3:hover {
+    transform: scale(1.2);
+}
+
+.picWrapper2 {
+    margin: 0 1em;
+}
+
+.cloud1, .cloud2, .cloud3 {
+    position: absolute;
+    width: 20vw;
+}
+.cloud1 {
+    left: 5%;
+    top: 5vw;
+}
+.cloud2 {
+    top: 37vw;
+    left: 35%;
+}
+.cloud3 {
+    top: 15vw;
+    left: 65%;
+}

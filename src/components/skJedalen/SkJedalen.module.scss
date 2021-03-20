@@ -1,0 +1,110 @@
+.jedalenContainer  {
+    text-align: center;
+    margin: 5em auto;
+}
+.table {
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+    width: 50em;
+    border-collapse: collapse;
+    border: 1px solid #a6a6a63d;
+}
+
+.caption {
+    margin-bottom: 2em;
+    color: #ea7b22;
+    font: {
+        family: 'Rubik', sans-serif;
+        size: 2em;
+    }
+}
+
+tbody td:nth-child(1), thead th:nth-child(1) {
+  width: 4em;
+  background: #1f5709;
+  color: #ffffff;
+  font: {
+        family: 'Kalam', sans-serif;
+    }
+}
+
+thead {
+    background: #1f5709;
+    font: {
+        family: 'Kalam', sans-serif;
+    };
+}
+
+tbody tr:nth-child(even) {
+    background: rgb(233, 233, 233);
+}
+tbody tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+
+
+tbody tr {
+    color: #9a9a9a;
+    font: {
+        family: 'Rubik', sans-serif;
+        size: .9em;
+    }
+}
+
+.casy {
+    color: #ffffff;
+}
+
+
+
+@media (max-width: 850px) {
+    .jedalenContainer  {
+        margin: 3em auto;
+    }
+    .table {
+        width: 99%;
+    }
+    td {
+        width: 5em;
+    }
+    tbody td:nth-child(1), thead th:nth-child(1) {
+        width: 2em;
+    }
+    tbody:not(:first-child), thead:not(:first-child) {
+        width: 30%;
+    }
+    tbody tr {
+        font: {
+            size: .75em;
+        }
+    }
+    .vegetable {
+        width: 90%;
+    }
+    thead {
+        font: {
+            size: .75em;
+        }
+    }
+
+}
+
+
+@media (max-width: 500px) {
+    .jedalenContainer  {
+        margin: 2em auto;
+    }
+    tbody tr {
+        font: {
+            size: .6em;
+        }
+    }
+    .caption {
+        margin-bottom: 1em;
+        font: {
+            size: 1.6em;
+        }
+    }
+}

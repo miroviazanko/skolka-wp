@@ -1,0 +1,35 @@
+{
+    "spravy": [
+        {
+            "text": "Domestos pre školy – plníme jednotlivé úlohy, prostredníctvom ktorých si deti osvoja a zdokonalia hygienu",
+            "classAktual": "aktual",
+            "key": 6
+        },
+        {
+            "text": "Zber vrchnákov z PET fliaš – na pomoc chorým detičkách",
+            "classAktual": "aktual",
+            "key": 5
+        },
+        {
+            "text": "Recyklohry – zber maleho elektroodpadu, bateriek, starých telefónov",
+            "classAktual": "aktual",
+            "key": 4
+        },
+        {
+            "text": "Milk Agro – zber SABI viečok, a výhra 200€ s piesňou na nákup potrieb MŠ",
+            "classAktual": "aktual",
+            "key": 3
+        },
+        {
+            "text": "2016 – 1. miesto v grantovom programe Renáty Zmajkovičovej – 6820€ na obnovu školskej kuchyne – 3000€ grantová výhra + 3820€ prostredníctvom portálu www.ludialudom.sk",
+            "classAktual": "aktual",
+            "key": 2
+        },
+        {
+            "text": "2015 – 1. miesto v súťaži Domestos pre školy – finančná odmena 4000€ a 4000€ na nákup materiálu na rekonštrukciu kúpelne",
+            "classAktual": "aktual",
+            "key": 1
+        }
+
+    ]
+}

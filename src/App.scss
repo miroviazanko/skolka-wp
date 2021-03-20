@@ -1,0 +1,179 @@
+$background: #8cc81d;
+$text-color: #9a9a9a;
+$h2-color: #046bb0;
+$h3-color:  #8cc81d;
+$h4-color: #ea7b22;
+$family-Rubik: 'Rubik', sans-serif;
+$family-Kalam: 'Kalam', cursive;
+
+
+h1 {
+    font-family: 'Concert One', cursive;
+    font-size: 3em;
+    color: $background;
+	text-align: center;
+	margin-top: 2em;
+}
+
+h2 {
+   font: {
+       family: $family-Rubik;
+       size: 4em;
+   }
+   color: $h2-color;
+}
+
+h3 {
+    font: {
+        family: $family-Rubik;
+        size: 2em;
+    }
+    color: $h3-color;
+    margin-top: 3em;
+    margin-bottom: 1.5em;
+}
+
+h5 {
+    font: {
+        family: $family-Kalam;
+        size: 1.5em;
+    }
+    color: $h4-color;
+    margin-bottom: 1.5em;
+}
+
+p {
+    font-family: $family-Rubik;
+    word-spacing: .4em;
+    letter-spacing: .03em;
+    color: $text-color;
+}
+
+.grass {
+	position: fixed;
+	bottom: 0;
+	z-index: 5;
+}
+
+ul {
+    list-style: none;
+    color: $text-color;
+    text-align: left;
+    line-height: 3em;
+    font: {
+        size: 1.2em;
+        family: $family-Rubik;
+    }
+}
+
+figcaption {
+    font: {
+        family: $family-Kalam;
+        size: 1.2em;
+    }
+    color: $text-color;
+    margin-bottom: 1.5em;
+}
+
+
+
+
+
+.fade-enter-active {
+    transition: all 1s;
+}
+.fade-exit-active {
+        transition: all 0s;
+
+}
+
+.fade-enter {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-exit {
+    opacity: 1;
+}
+.fade-exit-active {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+
+
+
+
+@media (max-width: 850px) {
+    h1 {
+        margin-top: 1.5em;
+        margin-left: 5%;
+        margin-right: 5%;
+        font: {
+            size: 2em;
+            weight: normal;
+        }
+    }
+    h2 {
+        font: {
+            size: 3em;
+        }
+    }
+    h3 {
+        margin-top: 2em;
+    }
+    h5 {
+        font: {
+            size: 1.2em;
+        }
+        margin-bottom: 1em;
+    }
+
+    p {
+        font: {
+            size: .9em;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+     h2 {
+        font: {
+            size: 2.3em;
+        }
+    }
+    h3 {
+        margin-top: 1.5em;
+        margin-bottom: .5em;
+        font: {
+            size: 1.7em;
+        }
+    }
+    h5 {
+        font: {
+            size: .9em;
+        }
+    }
+
+    p {
+        font: {
+            size: .8em;
+        }
+    }
+}
+
+
+@media (max-width: 300px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: .6em;
+    }
+
+}
