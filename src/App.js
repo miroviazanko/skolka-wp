@@ -58,7 +58,6 @@ function App() {
       await fetch('http://localhost/skolka/wp-json/wp/v2/posts')
         .then(response => response.json())
         .then(resp => setData(resp));
-
     })();
   }, []);
 
