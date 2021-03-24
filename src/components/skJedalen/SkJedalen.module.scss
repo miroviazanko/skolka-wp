@@ -1,40 +1,40 @@
+$bg-meal-time: #8cc81d;
+$bg-days: #8cc81d;
+
+
+
 .jedalenContainer  {
     text-align: center;
     margin: 5em auto;
 }
-.table {
+figure {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2rem;
     table-layout: fixed;
     width: 50em;
-    border-collapse: collapse;
-    border: 1px solid #a6a6a63d;
+}
+table {
+    width: 100%;
 }
 
-.caption {
-    margin-bottom: 2em;
-    color: #ea7b22;
+
+tbody:not(tr:nth-child(1)) {
+    color: #747474;
     font: {
-        family: 'Rubik', sans-serif;
-        size: 2em;
-    }
+            family: 'Rubik', sans-serif;
+        }
 }
 
-tbody td:nth-child(1), thead th:nth-child(1) {
-  width: 4em;
-  background: #1f5709;
+tbody td:nth-child(1) {
+  width: 10%;
+  background: $bg-days;
   color: #ffffff;
   font: {
         family: 'Kalam', sans-serif;
     }
 }
 
-thead {
-    background: #1f5709;
-    font: {
-        family: 'Kalam', sans-serif;
-    };
-}
 
 tbody tr:nth-child(even) {
     background: rgb(233, 233, 233);
@@ -45,16 +45,13 @@ tbody tr:nth-child(odd) {
 
 
 
-tbody tr {
-    color: #9a9a9a;
-    font: {
-        family: 'Rubik', sans-serif;
-        size: .9em;
-    }
-}
-
-.casy {
+tbody tr:nth-child(1) {
     color: #ffffff;
+    background: $bg-meal-time;
+    font: {
+        family: 'Kalam', sans-serif;
+        size: 1.3em;
+    }
 }
 
 
@@ -63,16 +60,16 @@ tbody tr {
     .jedalenContainer  {
         margin: 3em auto;
     }
-    .table {
+    figure {
         width: 99%;
     }
     td {
         width: 5em;
     }
-    tbody td:nth-child(1), thead th:nth-child(1) {
+    tbody td:nth-child(1) {
         width: 2em;
     }
-    tbody:not(:first-child), thead:not(:first-child) {
+    tbody:not(:first-child) {
         width: 30%;
     }
     tbody tr {
@@ -88,6 +85,11 @@ tbody tr {
             size: .75em;
         }
     }
+    tbody tr:nth-child(1) {
+        font: {
+            size: .9em;
+        }
+    }
 
 }
 
@@ -101,10 +103,10 @@ tbody tr {
             size: .6em;
         }
     }
-    .caption {
-        margin-bottom: 1em;
+
+    tbody tr:nth-child(1) {
         font: {
-            size: 1.6em;
+            size: .7em;
         }
     }
 }

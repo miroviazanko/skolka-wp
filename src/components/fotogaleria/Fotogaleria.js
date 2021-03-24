@@ -1,22 +1,37 @@
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 
 import styles from './Fotogaleria.module.scss';
 
-import { gallery } from './galleryJs';
+//import { gallery } from './galleryJs';
 import { MdZoomOutMap } from 'react-icons/md';
 
 import GalleryZoom from './galleryZoom/GalleryZoom';
 
 
+
+
+
+
+
 export default function Fotogaleria() {
 
-    const galleryArr = gallery.gallery;
 
+    const [galleryArr, setGallery] = useState([]);
     const [elementHover, setElementHover] = useState();
-    const [zoomOveral, setZoomOveral ] = useState(false);
+    const [zoomOveral, setZoomOveral] = useState(false);
+
+
+    useEffect(() => {
+        (async () => {
+            await fetch('http://localhost/skolka/wp-json/wp/v2/media?parent=68')
+                .then(response => response.json())
+                .then(resp => setGallery(resp));
+        })();
+    }, []);
+
+
 
     const zoomStyles = { transform: `scale(1.1)`, filter: `brightness(50%)` }
-
 
 
     const handleHover = el => {
@@ -31,17 +46,23 @@ export default function Fotogaleria() {
         setSt( prevState => !prevState)
     }
 
-    const galleryPhotos = galleryArr.map( g => {
+    const galleryPhotos = galleryArr.map( (g, i) => {
+
+        let imgSize = g.media_details.sizes;
+
+        let gallerySize = imgSize.medium ? imgSize.medium.source_url : imgSize.full.source_url
+
+
         return (
+
             <div className={styles.wrapperPhoto}
-                 key={g.key}
+                 key={i}
                  onMouseOver={() => handleHover( g )}
                  onMouseLeave={() => handleDisHover()}
                  onClick={() => onVisibleZoom(setZoomOveral)}
             >
-                <img src={g.src.default}
+                <img src={gallerySize}
                     alt={g.alt}
-                    key={g.key}
                     className={styles.specificPhoto}
                     style={elementHover === g ? { ...zoomStyles } : null}
                 />

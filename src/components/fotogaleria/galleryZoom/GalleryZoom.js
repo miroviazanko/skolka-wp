@@ -10,9 +10,13 @@ export default function GalleryZoom(props) {
 
     const [specificPhoto, setSpecificPhoto] = useState();
 
+
     useEffect( () => {
+        const specificImgSizes = props.clickedEl.media_details.sizes.full.source_url;
+
+        setSpecificPhoto( specificImgSizes )
+
         window.addEventListener('keydown', handleKeyDown);
-        setSpecificPhoto(props.clickedEl.srcZoom.default);
 
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
@@ -29,14 +33,14 @@ export default function GalleryZoom(props) {
 
     const nextPhotoLeft = (e, data) => {
 
-        const positionOfCurrent = props.gallery.map( g => g.srcZoom.default).indexOf(data);
+        const positionOfCurrent = props.gallery.map( g => g.media_details.sizes.full.source_url).indexOf(data);
         const arrayPhotoLength = props.gallery.length;
 
 
         if (positionOfCurrent === 0) {
-            setSpecificPhoto(props.gallery[arrayPhotoLength - 1].srcZoom.default)
+            setSpecificPhoto(props.gallery[arrayPhotoLength - 1].media_details.sizes.full.source_url)
         } else {
-            setSpecificPhoto(props.gallery[positionOfCurrent - 1].srcZoom.default)
+            setSpecificPhoto(props.gallery[positionOfCurrent - 1].media_details.sizes.full.source_url)
         }
 
         e.stopPropagation();
@@ -45,14 +49,14 @@ export default function GalleryZoom(props) {
 
     const nextPhotoRight = (e, data) => {
 
-        const positionOfCurrent = props.gallery.map( g => g.srcZoom.default).indexOf(data);
+        const positionOfCurrent = props.gallery.map( g => g.media_details.sizes.full.source_url).indexOf(data);
         const arrayPhotoLength = props.gallery.length;
 
 
         if (positionOfCurrent === (arrayPhotoLength-1)) {
-            setSpecificPhoto(props.gallery[0].srcZoom.default)
+            setSpecificPhoto(props.gallery[0].media_details.sizes.full.source_url)
         } else {
-            setSpecificPhoto(props.gallery[positionOfCurrent + 1].srcZoom.default)
+            setSpecificPhoto(props.gallery[positionOfCurrent + 1].media_details.sizes.full.source_url)
         }
 
         e.stopPropagation();

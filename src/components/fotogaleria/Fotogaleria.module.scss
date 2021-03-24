@@ -8,10 +8,14 @@
     display: inline-block;
     margin: .5em;
     width: 20%;
+    height: 12vw;
     position: relative;
 }
 
 .specificPhoto {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
     transition: all .3s ease;
     cursor: pointer;
 }
@@ -35,6 +39,7 @@
     }
     .wrapperPhoto {
         width: 30%;
+        height: 18vw;
     }
     .fotogaleriaHeader {
         margin-bottom: 1em;
@@ -48,6 +53,7 @@
     }
     .wrapperPhoto {
         width: 45%;
+        height: 24vw;
     }
 }
 
@@ -55,5 +61,6 @@
 @media (max-width: 400px) {
     .wrapperPhoto {
         width: 90%;
+        height: 48vw;
     }
 }

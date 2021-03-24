@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('mnsk_setup')) :
+if (!function_exists('skolka_setup')) :
 /**
 * Sets up theme defaults and registers support for various WordPress features.
 *
@@ -8,13 +8,13 @@ if (!function_exists('mnsk_setup')) :
 * runs before the init hook. The init hook is too late for some features, such
 * as indicating support for post thumbnails.
 */
-    function mnsk_setup()
+    function skolka_setup()
     {
         /*
         * Make theme available for translation.
         * Translations can be filed in the /languages/ directory.
         */
-        load_theme_textdomain('mnsk', get_template_directory() . '/languages');
+        load_theme_textdomain('skolka', get_template_directory() . '/languages');
 
         /*
         * Let WordPress manage the document title.
@@ -34,17 +34,7 @@ if (!function_exists('mnsk_setup')) :
             // This theme uses wp_nav_menu() in two locations.
             register_nav_menus(
             array(
-                'top-menu' => __('Primary', 'mnsk'),
-                'blog-menu' => __( 'Blog-menu', 'mnsk' ),
-                'footer-1a' => __('Footer-1a', 'mnsk'),
-                'footer-1b' => __('Footer-1b', 'mnsk'),
-                'footer-2a' => __('Footer-2a', 'mnsk'),
-                'footer-2b' => __('Footer-2b', 'mnsk'),
-                'footer-4a' => __('Footer-4a', 'mnsk'),
-                'vystavy-menu' => __('Vystavy-menu', 'mnsk'),
-                'zbierky-menu' => __('Zbierky-menu', 'mnsk'),
-                'expozitury-menu' => __('Expozitury-menu', 'mnsk'),
-
+                'top-menu' => __('Primary', 'skolka'),
             )
             );
 
@@ -65,11 +55,11 @@ if (!function_exists('mnsk_setup')) :
             add_theme_support('responsive-embeds');
 
             // Register a new image sizes
-            add_image_size('square_size', 320 , 320, true);
-            add_image_size('rectangle_portrait_size', 440 , 820, true);
-            add_image_size('mnsk_post_thumbnail', 600 , 400, true);
+            add_image_size('skolka_menu_img_size', 1000 , 800, true);
+            add_image_size('skolka_rectangle_portrait_size', 600 , 840, true);
+            add_image_size('skolka_intro_size', 1800 , 410, true);
     }
 endif;
 
 
-add_action('after_setup_theme', 'mnsk_setup');
+add_action('after_setup_theme', 'skolka_setup');

@@ -6,7 +6,7 @@ function enqueue_admin_assets()
 {
     $user_id = wp_get_current_user()->ID;
 
-    if ( $user_id !== 1 && $user_id !== 2 )
+    if ( $user_id !== 1 )
     {
         remove_menu_page( 'edit-comments.php' );
         remove_menu_page( 'plugins.php' );

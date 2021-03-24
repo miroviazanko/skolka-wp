@@ -1,39 +1,53 @@
-import React from "react";
+import React, {useContext} from "react";
 
 import styles from './WelcomeScreen.module.scss';
 
-
 import children from '../../assets/cliparts/children-transparent-900.png';
-
-
 
 import WelcomeContact from './WelcomeContact';
 
+import { wpDataContext } from '../../App'
 
 
 
 
 export default function WelcomeScreen() {
 
-    return (
-        <div className={styles.welcomeContainer}>
+    const { wpPages } = useContext(wpDataContext);
 
 
-            <h1>
-                Vitajte na stránke Materskej školy v Radaticiach
-            </h1>
+    const findAcfFields = (arrayOfFields, idNum) => {
+        return (
+            arrayOfFields.length && arrayOfFields.find(a => {
+                return a.id === idNum && a;
+            })
+        )
+    }
 
-            <img src={children}
-                 alt="deti"
-                 className={styles.children} />
+    let welcomePage = findAcfFields(wpPages, 15);
 
-            <p className={styles.introText}>
-                Škôlka ponúka všetko čo si môžu rodičia pre svoje deti priať, od kvalifikovaných odborných pedagógov po bohaté priestory v interiéri a veľký areál, v ktorom sa budú deti cítiť ako doma.
-            </p>
 
-            <WelcomeContact />
+        return (
+            <>
+                { wpPages.length ?
+                    <div className={styles.welcomeContainer}>
 
-        </div>
+                    <h1>
+                            {welcomePage.title.rendered}
+                        </h1>
+
+                        <img src={children}
+                            alt="deti"
+                            className={styles.children} />
+
+                        <p className={styles.introText} dangerouslySetInnerHTML={{ __html: welcomePage ? welcomePage.content.rendered : null }}>
+
+                        </p>
+
+                        <WelcomeContact />
+
+                    </div> : null}
+            </>
 
     )
 }

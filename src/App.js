@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Switch, Route, useLocation } from 'react-router-dom';
+import React, { useState, useEffect, createContext } from "react";
+import { Switch, Route } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import './App.scss';
@@ -24,8 +24,9 @@ import Kontakt from './components/kontakt/Kontakt';
 
 import Footer from './components/footer/Footer';
 
+//import Single from './templates/Single';
 
-
+export const wpDataContext = createContext();
 
 function App() {
 
@@ -33,88 +34,86 @@ function App() {
 
   const [menu] = useState(menuList)
 
-  const loc = useLocation();
-
-  /*const useFetch = url => {
-    const [data, setData] = useState();
-
-    async function fetchData() {
-      const response = await fetch(url);
-      const json = await response.json();
-      setData(json);
-    }
-
-    useEffect(() => { fetchData() }, [url]);
-
-    return data;
-  };*/
-
-  const [data, setData] = useState([]);
-
-
+  const [ wpPosts, setWpPosts] = useState([]);
+  const [ wpPages, setWpPages ] = useState([]);
+  const [ wpAcf, setWpAcf ] = useState([]);
+  const [ wpMedia, setWpMedia] = useState([]);
+  const [ wpEmbed, setWpEmbed] = useState([])
 
   useEffect(() => {
     (async () => {
       await fetch('http://localhost/skolka/wp-json/wp/v2/posts')
         .then(response => response.json())
-        .then(resp => setData(resp));
+        .then(resp => setWpPosts(resp))
+        .then(
+          fetch('http://localhost/skolka/wp-json/wp/v2/pages')
+            .then(response => response.json())
+            .then(resp => setWpPages(resp))
+            .then(
+              fetch('http://localhost/skolka/wp-json/acf/v3/pages')
+                .then(response => response.json())
+                .then(resp => setWpAcf(resp))
+                  ).then(
+                    fetch('http://localhost/skolka/wp-json/wp/v2/media')
+                      .then(response => response.json())
+                      .then(resp => setWpMedia(resp))
+                    ).then(
+                      fetch('http://localhost/skolka/wp-json/wp/v2/pages?_embed')
+                        .then(response => response.json())
+                        .then(resp => setWpEmbed(resp))
+                    )
+        );
     })();
   }, []);
 
 
 
-
-
-
   return (
-    <div className="App">
 
-      <Header />
+    <wpDataContext.Provider value={{wpPosts: wpPosts, wpPages: wpPages, wpAcf: wpAcf, wpMedia: wpMedia, wpEmbed: wpEmbed}}>
+      <div className="App">
 
-      {data ? data.map( (d, i) => {
-        return(
-          <li key={i}>{d.title.rendered}</li>
-        )
-      } ) : null}
+        <Header />
 
-      <img src={grass}
-        alt="trava"
-        className="grass"
-      />
+        <img src={grass}
+          alt="trava"
+          className="grass"
+        />
 
-      <Route render={({ location }) => (
-        <>
-          <Menu menu={menu} />
+        <Route render={({ location }) => (
+          <>
+            <Menu menu={menu} />
 
 
-          <TransitionGroup>
-            <CSSTransition
-              timeout={1000}
-              classNames='fade'
-              key={location.pathname.split('/')[1]}>
+            <TransitionGroup>
+              <CSSTransition
+                timeout={1000}
+                classNames='fade'
+                key={location.pathname.split('/')[1]}>
 
-              <Switch location={location}>
-                <Route path="/" exact component={WelcomeScreen} />
-                <Route path="/oNas" component={ONas} />
-                <Route path="/skJedalen" component={SkJedalen} />
-                <Route path="/aktuality" component={Aktuality} />
-                <Route path="/fotogaleria" component={Fotogaleria} />
-                <Route path="/rezim" component={Rezim} />
-                <Route path="/tlaciva" component={Tlaciva} />
-                <Route path="/kontakt" component={Kontakt} />
-              </Switch>
-            </CSSTransition>
-          </TransitionGroup>
-
-
-        </>
-
-      )} />
-
-      <Footer />
+                <Switch location={location}>
+                  <Route path="/" exact component={WelcomeScreen} />
+                  <Route path="/ONas" component={ONas} />
+                  <Route path="/skJedalen" component={SkJedalen} />
+                  <Route path="/aktuality" component={Aktuality} />
+                  <Route path="/fotogaleria" component={Fotogaleria} />
+                  <Route path="/rezim" component={Rezim} />
+                  <Route path="/tlaciva" component={Tlaciva} />
+                  <Route path="/kontakt" component={Kontakt} />
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
 
 
-    </div>
+          </>
+
+        )} />
+
+        <Footer />
+
+
+      </div>
+    </wpDataContext.Provider>
   );
 }
 
