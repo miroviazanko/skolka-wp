@@ -24,8 +24,6 @@ export default function SkJedalen() {
 
     let canteen = findAcfFields(wpPages, 25);
 
-    console.log(wpEmbed);
-
 
     useEffect(() => {
         if (wpEmbed.length !== 0) {

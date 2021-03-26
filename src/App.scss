@@ -116,7 +116,12 @@ figcaption {
 
 
 
-
+@media (min-width: 1920px) {
+    .grass {
+        bottom: -3%;
+        width: 100%;
+    }
+}
 
 @media (max-width: 850px) {
     h1 {
@@ -172,7 +177,7 @@ figcaption {
     }
     h5 {
         font: {
-            size: .9em;
+            size: .7em;
         }
     }
     h6 {

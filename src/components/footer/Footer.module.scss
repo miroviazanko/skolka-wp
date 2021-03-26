@@ -3,6 +3,7 @@ $hr-color: #cecece;
 $text-color: #507a00;
 
 .footerContainer {
+    position: relative;
     background: $background;
     text-align: left;
     overflow: hidden;
@@ -45,6 +46,14 @@ $text-color: #507a00;
     margin-bottom: 6em;
 }
 
+.sunflower {
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+    width: 10rem;
+    opacity: .8;
+}
+
 
 @media (max-width: 850px) {
     .copyright {
@@ -59,6 +68,11 @@ $text-color: #507a00;
             margin-left: 3em;
         }
     }
+    .sunflower {
+        bottom: 3px;
+        right: 0px;
+        width: 6rem;
+    }
 }
 
 
@@ -68,5 +82,10 @@ $text-color: #507a00;
         a {
             width: 45%;
         }
+    }
+    .sunflower {
+        bottom: 3px;
+        right: -50px;
+        width: 6rem;
     }
 }

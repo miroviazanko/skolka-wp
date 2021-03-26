@@ -1,16 +1,57 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { wpDataContext } from '../../App';
+
 
 import styles from './Aktuality.module.scss';
-import aktualityJson from './aktuality.json';
+//import aktualityJson from './aktuality.json';
 
-import child from '../../assets/aktuality/child.jpg'
+//import child from '../../assets/aktuality/child.jpg'
 
 import { GiTreeBranch } from 'react-icons/gi'
 
 
 export default function Aktuality() {
 
-    const aktualityArr = aktualityJson.spravy;
+    const { wpPages, wpPosts } = useContext(wpDataContext);
+
+    const findAcfFields = (arrayOfFields, idNum) => {
+        return (
+            arrayOfFields.length && arrayOfFields.find(a => {
+                return a.id === idNum && a;
+            })
+        )
+    }
+
+    console.log(wpPages, wpPosts);
+
+
+    const aktuality = wpPosts.length ? wpPosts.map( (p, i) => {
+       return (
+            <div className={styles.aktualita}
+                key={i}>
+                <GiTreeBranch className={styles.icon} fill="#8cc81d" />
+                <h5>{p.title.rendered}</h5>
+               <p dangerouslySetInnerHTML={{ __html: p.content.rendered}}>
+
+                </p>
+            </div>
+       )
+    } ) : null;
+
+    /*useEffect(() => {
+        if (wpPages.length && wpEmbed.length !== 0) {
+            setContent(findAcfFields(wpPages, 13));
+            setImage1(findAcfFields(wpEmbed, 13).acf.uvodny_obrazok_1);
+            setImage2(findAcfFields(wpEmbed, 13).acf.uvodny_obrazok_2);
+            setPhilosophy(findAcfFields(wpEmbed, 13).acf.nasa_filozofia)
+        }
+        return () => {
+
+        }
+    }, [wpPages, wpEmbed])*/
+
+
+    /*const aktualityArr = aktualityJson.spravy;
 
     const aktuality = aktualityArr.map( (a, i) => {
         return(
@@ -22,19 +63,26 @@ export default function Aktuality() {
                 </p>
             </div>
         )
-    }  )
+    }  )*/
 
 
     return (
         <div className={styles.aktualityContainer}>
-            <h2>Aktuality</h2>
+
+
+            { wpPosts.length ? aktuality : null}
+
+
+
+
+            {/*<h2>Aktuality</h2>
             <p className={styles.introText}>Naša MŠ sa pravidelne zapája do rôznych súťaží, projektov, aktivít. Aktívne vyhľadávame možnosti, kde sa môžu zapojiť deti, rodičia, či všetci priatelia. Samozrejme sa snažíme súťažiť aj v grantoch, ktoré pre našu MŠ znamenajú veľkú pomoc, či už materiálnu alebo finančnú. Vo viacerých sa ukázalo, že aj rodičia a učitelia vedia byť zomknutí a potvrdilo sa staré známe porekadlo: ,,V jednote je sila!“</p>
 
             <img src={child}
                  alt="dieta skola Radatice"
                  className={styles.childPhoto}/>
 
-            {aktuality}
+            {aktuality}*/}
         </div>
     )
 }

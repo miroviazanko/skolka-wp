@@ -5,6 +5,7 @@ import styles from './Footer.module.scss';
 
 import list from '../menu/menu.json';
 
+import sunflower from '../../assets/sun/sunflower-compr.png';
 
 export default function Footer(props) {
 
@@ -38,6 +39,7 @@ export default function Footer(props) {
             <hr className={styles.line} />
             <p className={styles.copyright}>&#169; 2020 MŠ Radatice
             </p>
+            <img src={sunflower} alt="sunflower" className={styles.sunflower}/>
         </div>
     )
 

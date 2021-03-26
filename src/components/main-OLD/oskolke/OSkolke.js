@@ -24,8 +24,6 @@ export default function OSkolke() {
     const photosArray = [ picture1, picture2, picture3 ];
     const cloudsArray = [ cloud1, cloud2, cloud3 ];
 
-    console.log(cloudsArray);
-
     const photosArr = photosOskolke.map( (ph, i) => {
         return (
             <div className={styles[ph.classWrapper]}
