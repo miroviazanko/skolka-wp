@@ -38,7 +38,15 @@ function App() {
   const [ wpPages, setWpPages ] = useState([]);
   const [ wpAcf, setWpAcf ] = useState([]);
   const [ wpMedia, setWpMedia] = useState([]);
-  const [ wpEmbed, setWpEmbed] = useState([])
+  const [ wpEmbed, setWpEmbed] = useState([]);
+
+  const findSpecificPost = (arrayOfFields, idNum) => {
+    return (
+      arrayOfFields.length && arrayOfFields.find(a => {
+        return a.id === idNum && a;
+      })
+    )
+  }
 
   useEffect(() => {
     (async () => {
@@ -70,7 +78,7 @@ function App() {
 
   return (
 
-    <wpDataContext.Provider value={{wpPosts: wpPosts, wpPages: wpPages, wpAcf: wpAcf, wpMedia: wpMedia, wpEmbed: wpEmbed}}>
+    <wpDataContext.Provider value={{wpPosts: wpPosts, wpPages: wpPages, wpAcf: wpAcf, wpMedia: wpMedia, wpEmbed: wpEmbed, findSpecificPost: findSpecificPost}}>
       <div className="App">
 
         <Header />

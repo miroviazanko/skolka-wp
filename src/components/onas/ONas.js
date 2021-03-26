@@ -14,27 +14,19 @@ import Personal from './personal/Personal';
 
 export default function ONas() {
 
-    const { wpPages, wpEmbed } = useContext(wpDataContext);
+    const { wpPages, wpEmbed, findSpecificPost } = useContext(wpDataContext);
 
     const [content, setContent] = useState();
     const [image1, setImage1] = useState();
     const [image2, setImage2] = useState();
     const [ philosophy, setPhilosophy ] = useState();
 
-    const findAcfFields = (arrayOfFields, idNum) => {
-        return (
-            arrayOfFields.length && arrayOfFields.find(a => {
-                return a.id === idNum && a;
-            })
-        )
-    }
-
     useEffect(() => {
         if (wpPages.length && wpEmbed.length !== 0) {
-            setContent(findAcfFields(wpPages, 13));
-            setImage1(findAcfFields(wpEmbed, 13).acf.uvodny_obrazok_1);
-            setImage2(findAcfFields(wpEmbed, 13).acf.uvodny_obrazok_2);
-            setPhilosophy(findAcfFields(wpEmbed, 13).acf.nasa_filozofia )
+            setContent(findSpecificPost(wpPages, 13));
+            setImage1(findSpecificPost(wpEmbed, 13).acf.uvodny_obrazok_1);
+            setImage2(findSpecificPost(wpEmbed, 13).acf.uvodny_obrazok_2);
+            setPhilosophy(findSpecificPost(wpEmbed, 13).acf.nasa_filozofia )
         }
         return () => {
 

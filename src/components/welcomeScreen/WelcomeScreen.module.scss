@@ -4,6 +4,20 @@
 	z-index: 1;
 }
 
+.actualNew {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50em;
+	border: 1px solid #b73d2e;
+	h3 {
+		margin-top: 2em;
+		color: #b73d2e;
+	}
+	p {
+		padding-bottom: 1em;
+	}
+}
+
 .welcomeArticle {
 	position: absolute;
 	top: 38%;
@@ -28,6 +42,10 @@
 		width: 76%;
 		margin: 5em 12%;
 	}
+	.actualNew {
+		width: 90%;
+	}
+
 }
 
 

@@ -15,7 +15,7 @@ export default function Tlaciva() {
             <div className={styles.tlacivaSpecific}>
                 <FaLeaf
                     size="28"
-                    fill="#235808"
+                    fill="#598a00"
                     className={styles.leaf}
                 />
                 <p>Súhlas so spracovaním údajov</p>
@@ -24,7 +24,7 @@ export default function Tlaciva() {
             <div className={styles.tlacivaSpecific}>
                 <FaLeaf
                     size="28"
-                    fill="#235808"
+                    fill="#598a00"
                     className={styles.leaf}
                 />
                 <p>Žiadosť o prijatie dieťaťa do mš</p>

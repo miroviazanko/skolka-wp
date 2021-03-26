@@ -12,24 +12,15 @@ import { GiTreeBranch } from 'react-icons/gi'
 
 export default function Aktuality() {
 
-    const { wpPages, wpPosts } = useContext(wpDataContext);
+    const { wpPages, wpPosts, findSpecificPost } = useContext(wpDataContext);
 
-    const findAcfFields = (arrayOfFields, idNum) => {
-        return (
-            arrayOfFields.length && arrayOfFields.find(a => {
-                return a.id === idNum && a;
-            })
-        )
-    }
-
-    console.log(wpPages, wpPosts);
-
+    const page = wpPages.length ? findSpecificPost(wpPages, 57) : null;
 
     const aktuality = wpPosts.length ? wpPosts.map( (p, i) => {
        return (
             <div className={styles.aktualita}
                 key={i}>
-                <GiTreeBranch className={styles.icon} fill="#8cc81d" />
+               <GiTreeBranch className={styles.icon} fill="#598a00" size="22"/>
                 <h5>{p.title.rendered}</h5>
                <p dangerouslySetInnerHTML={{ __html: p.content.rendered}}>
 
@@ -68,7 +59,9 @@ export default function Aktuality() {
 
     return (
         <div className={styles.aktualityContainer}>
+            <h2>{page ? page.title.rendered : null}</h2>
 
+            <p className={styles.introText} dangerouslySetInnerHTML={{ __html: page ? page.content.rendered : null }}></p>
 
             { wpPosts.length ? aktuality : null}
 

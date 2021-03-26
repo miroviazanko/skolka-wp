@@ -11,23 +11,14 @@ import vegetable from '../../assets/jedalen/Vegetable-PNG-Image.png';
 export default function SkJedalen() {
 
 
-    const { wpPages, wpEmbed } = useContext(wpDataContext);
+    const { wpPages, wpEmbed, findSpecificPost } = useContext(wpDataContext);
     const [image, setImage] = useState();
 
-    const findAcfFields = (arrayOfFields, idNum) => {
-        return (
-            arrayOfFields.length && arrayOfFields.find(a => {
-                return a.id === idNum && a;
-            })
-        )
-    }
-
-    let canteen = findAcfFields(wpPages, 25);
-
+    let canteen = findSpecificPost(wpPages, 25);
 
     useEffect(() => {
         if (wpEmbed.length !== 0) {
-            setImage(findAcfFields(wpEmbed, 25)._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url);
+            setImage(findSpecificPost(wpEmbed, 25)._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url);
         }
         return () => {
 

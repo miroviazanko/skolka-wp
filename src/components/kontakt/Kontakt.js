@@ -8,19 +8,11 @@ import styles from './Kontakt.module.scss';
 
 export default function Kontakt() {
 
-    const {wpPages} = useContext(wpDataContext);
+    const { wpPages, findSpecificPost} = useContext(wpDataContext);
 
-    const findAcfFields = (arrayOfFields, idNum) => {
-        return (
-            arrayOfFields.length && arrayOfFields.find(a => {
-                return a.id === idNum && a;
-            })
-        )
-    }
+    let contacts = findSpecificPost(wpPages, 43);
 
-    let contacts = findAcfFields(wpPages, 43);
-
-    let title = findAcfFields(wpPages, 43);
+    let title = findSpecificPost(wpPages, 43);
 
     return (
         <div className={styles.kontaktContainer}>

@@ -1,4 +1,4 @@
-$hr-color: #8cc81d;
+$hr-color: #598a00;
 
 
 .aktualityContainer {
@@ -10,13 +10,14 @@ $hr-color: #8cc81d;
         margin-right: auto;
     }
     h5 {
-        margin-left: 3rem;
-        color: #8cc81d;
+        margin-left: 5rem;
+        color: $hr-color;
     }
 }
 
 .introText {
     margin-bottom: 5em;
+    text-align: left;
 }
 
 .childPhoto {
@@ -37,7 +38,7 @@ $hr-color: #8cc81d;
 .icon {
     position: absolute;
     left: 0;
-
+    top: 8%;
 }
 
 .hr {
@@ -46,8 +47,6 @@ $hr-color: #8cc81d;
     margin: 0 35%;
     width: 30%;
 }
-
-
 
 @media (max-width: 900px) {
     .aktualita {
@@ -60,12 +59,19 @@ $hr-color: #8cc81d;
         margin: 3em auto;
         p {
             width: 90%;
-            margin-bottom: 2em;
+            margin: 0 0 2em 1em;
+        }
+        h5 {
+            margin-left: 2rem;
         }
     }
     .childPhoto {
         width: 90%;
         margin-bottom: 1em;
+    }
+    .icon {
+        top: 2%;
+        width: 12px;
     }
 }
 

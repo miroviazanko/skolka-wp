@@ -10,24 +10,15 @@ import styles from './Personal.module.scss';
 export default function Personal(props) {
 
 
-    const { wpPages } = useContext(wpDataContext);
+    const { wpPages, findSpecificPost } = useContext(wpDataContext);
     const [ acfDatas, setAcfDatas ] = useState([]);
     const [ zabkyTeachers, setZabkyTeachers ] = useState([])
     const [ sovickyTeachers, setSovickyTeachers ] = useState([])
     const [ nepedagog, setNepedagog ] = useState([]);
 
-
-    const findAcfFields = (arrayOfFields, idNum) => {
-        return (
-            arrayOfFields.length && arrayOfFields.find(a => {
-                return a.id === idNum && a;
-            })
-        )
-    }
-
     useEffect(() => {
         if (wpPages.length) {
-            let acf = findAcfFields(wpPages, 13).acf;
+            let acf = findSpecificPost(wpPages, 13).acf;
             setAcfDatas( acf );
 
             setNepedagog([[acf.fotka_zamestnanec_1, acf.meno_zamestnanec_1],
@@ -80,7 +71,9 @@ export default function Personal(props) {
 
     return (
         <div>
+            <h3>{ wpPages.length ? 'Personál' : null}</h3>
             { zabkyTeachers.length ?
+
                 <div className={styles.sovicky}>
                     <h5 className={styles.sovickyHeader}>{acfDatas.nazov}</h5>
                     <p>{acfDatas.popis}</p>

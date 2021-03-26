@@ -13,18 +13,13 @@ import { wpDataContext } from '../../App'
 
 export default function WelcomeScreen() {
 
-    const { wpPages } = useContext(wpDataContext);
+    const { wpPages, findSpecificPost } = useContext(wpDataContext);
 
+    let welcomePage = findSpecificPost(wpPages, 15);
+    let actualNew = findSpecificPost(wpPages, 224);
 
-    const findAcfFields = (arrayOfFields, idNum) => {
-        return (
-            arrayOfFields.length && arrayOfFields.find(a => {
-                return a.id === idNum && a;
-            })
-        )
-    }
+    console.log(actualNew);
 
-    let welcomePage = findAcfFields(wpPages, 15);
 
 
         return (
@@ -39,7 +34,13 @@ export default function WelcomeScreen() {
                         <img src={children}
                             alt="deti"
                             className={styles.children} />
+                        { actualNew.content.rendered.length ?
+                            <div className={styles.actualNew}>
+                                <h3>{actualNew.title.rendered}</h3>
+                                <p dangerouslySetInnerHTML={{ __html: actualNew.content.rendered }}></p>
 
+                            </div> : null
+                        }
                         <p className={styles.introText} dangerouslySetInnerHTML={{ __html: welcomePage ? welcomePage.content.rendered : null }}>
 
                         </p>

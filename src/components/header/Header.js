@@ -12,18 +12,10 @@ import { wpDataContext } from '../../App';
 export default function Header() {
 
     const [slogan, setSlogan] = useState(null);
-    const { wpPages } = useContext(wpDataContext);
-
-    const findAcfFields = (arrayOfFields, idNum) => {
-        return (
-            arrayOfFields.length && arrayOfFields.find(a => {
-                return a.id === idNum && a;
-            })
-        )
-    }
+    const { wpPages, findSpecificPost } = useContext(wpDataContext);
 
     useEffect(() => {
-        setSlogan(findAcfFields(wpPages, 15));
+        setSlogan(findSpecificPost(wpPages, 15));
         return () => {
         }
     }, [wpPages])

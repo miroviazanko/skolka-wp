@@ -11,19 +11,9 @@ import {  FiPhoneCall } from 'react-icons/fi';
 
 export default function WelcomeScreen() {
 
-    const { wpAcf } = useContext(wpDataContext);
+    const { wpAcf, findSpecificPost } = useContext(wpDataContext);
 
-    const findAcfFields = (arrayOfFields, idNum) => {
-        return (
-            arrayOfFields.length && arrayOfFields.find( a => {
-               return a.id === idNum && a;
-            })
-        )
-    }
-
-    let contacts = findAcfFields(wpAcf, 43).acf;
-
-
+    let contacts = findSpecificPost(wpAcf, 43).acf;
 
 
     return (

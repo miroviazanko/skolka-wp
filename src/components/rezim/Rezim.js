@@ -8,22 +8,14 @@ import { wpDataContext } from '../../App'
 
 export default function Rezim() {
 
-    let { wpEmbed, wpPages } = useContext(wpDataContext);
+    let { wpEmbed, wpPages, findSpecificPost } = useContext(wpDataContext);
     const [image, setImage] = useState(null);
     const [ title, setTitle] = useState(null)
 
-    const findAcfFields = (arrayOfFields, idNum) => {
-        return (
-            arrayOfFields.length && arrayOfFields.find(a => {
-                return a.id === idNum && a;
-            })
-        )
-    }
-
     useEffect(() => {
         if (wpEmbed.length && wpPages.length) {
-            setImage(findAcfFields(wpEmbed, 59)._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url);
-            setTitle(findAcfFields(wpPages, 59).title.rendered)
+            setImage(findSpecificPost(wpEmbed, 59)._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url);
+            setTitle(findSpecificPost(wpPages, 59).title.rendered)
         }
     },[wpEmbed, wpPages])
 
