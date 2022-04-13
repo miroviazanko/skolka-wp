@@ -18,10 +18,6 @@ export default function WelcomeScreen() {
     let welcomePage = findSpecificPost(wpPages, 15);
     let actualNew = findSpecificPost(wpPages, 224);
 
-    console.log(actualNew);
-
-
-
         return (
             <>
                 { wpPages.length ?

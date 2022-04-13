@@ -50,23 +50,23 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      await fetch('http://localhost/skolka/wp-json/wp/v2/posts')
+      await fetch('http://localhost/Zpers/skolka-wptheme/wp-json/wp/v2/posts')
         .then(response => response.json())
         .then(resp => setWpPosts(resp))
         .then(
-          fetch('http://localhost/skolka/wp-json/wp/v2/pages')
+          fetch('http://localhost/Zpers/skolka-wptheme/wp-json/wp/v2/pages')
             .then(response => response.json())
             .then(resp => setWpPages(resp))
             .then(
-              fetch('http://localhost/skolka/wp-json/acf/v3/pages')
+              fetch('http://localhost/Zpers/skolka-wptheme/wp-json/acf/v3/pages')
                 .then(response => response.json())
                 .then(resp => setWpAcf(resp))
                   ).then(
-                    fetch('http://localhost/skolka/wp-json/wp/v2/media')
+                    fetch('http://localhost/Zpers/skolka-wptheme/wp-json/wp/v2/media')
                       .then(response => response.json())
                       .then(resp => setWpMedia(resp))
                     ).then(
-                      fetch('http://localhost/skolka/wp-json/wp/v2/pages?_embed')
+                      fetch('http://localhost/Zpers/skolka-wptheme/wp-json/wp/v2/pages?_embed')
                         .then(response => response.json())
                         .then(resp => setWpEmbed(resp))
                     )

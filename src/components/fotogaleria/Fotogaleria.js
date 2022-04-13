@@ -23,12 +23,13 @@ export default function Fotogaleria() {
 
     useEffect(() => {
         (async () => {
-            await fetch('http://localhost/skolka/wp-json/wp/v2/media?parent=68')
+            await fetch('http://localhost/Zpers/skolka-wptheme/wp-json/wp/v2/media?parent=68')
                 .then(response => response.json())
                 .then(resp => setGallery(resp));
         })();
     }, []);
 
+	console.log(galleryArr);
 
 
     const zoomStyles = { transform: `scale(1.1)`, filter: `brightness(50%)` }

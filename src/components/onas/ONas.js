@@ -21,6 +21,7 @@ export default function ONas() {
     const [image2, setImage2] = useState();
     const [ philosophy, setPhilosophy ] = useState();
 
+
     useEffect(() => {
         if (wpPages.length && wpEmbed.length !== 0) {
             setContent(findSpecificPost(wpPages, 13));

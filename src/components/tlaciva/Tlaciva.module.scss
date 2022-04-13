@@ -1,3 +1,5 @@
+$docsColor: #598a00;
+
 .tlacivaContainer {
     text-align: center;
     margin: 5em auto;
@@ -10,8 +12,12 @@
     }
     a {
         display: block;
-        color: #598a00;
+        color: $docsColor;
     }
+	.downloadIcon {
+		color: $docsColor;
+		margin: 0 1rem;
+	}
 }
 
 .tlacivaSpecific {
